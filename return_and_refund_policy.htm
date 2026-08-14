@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রিটার্ন ও রিফান্ড পলিসি - PUNARBOON</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Reset & Centering */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Banner Theme Deep Forest Green Background */
+            background: linear-gradient(135deg, #071910 0%, #0d2c1d 50%, #153c29 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        /* Container Card */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background-color: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Gold Accent Border */
+        }
+
+        /* Top Bar Navigation */
+        .top-nav {
+            background-color: #071910;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .back-btn {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-3px);
+            color: #ffffff;
+        }
+
+        /* Header Area */
+        .header {
+            background: linear-gradient(180deg, #092015 0%, #0d2c1d 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 20px 20px;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .brand-title {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .brand-title span {
+            color: #d4af37;
+        }
+
+        .page-subtitle {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 6px;
+            color: #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 22px 20px;
+            background-color: #f8faf9;
+        }
+
+        .section-block {
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            color: #0d2c1d;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-bottom: 1px dashed #cbd5e0;
+            padding-bottom: 8px;
+        }
+
+        .policy-text {
+            color: #4a5568;
+            font-size: 13.5px;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        /* Highlight Info Badge */
+        .highlight-badge {
+            background-color: #e6fffa;
+            border: 1px solid #319795;
+            color: #234e52;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        /* Policy Bullet List (Green Check) */
+        .policy-list-check {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        .policy-list-check li {
+            position: relative;
+            padding-left: 22px;
+            color: #4a5568;
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .policy-list-check li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #38a169;
+            font-size: 12px;
+        }
+
+        /* Policy Bullet List (Red Cross) */
+        .policy-list-cross {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        .policy-list-cross li {
+            position: relative;
+            padding-left: 22px;
+            color: #4a5568;
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .policy-list-cross li::before {
+            content: "\f00d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #e53e3e;
+            font-size: 12px;
+        }
+
+        /* Strict Video Warning Box */
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            border-radius: 8px;
+            padding: 14px;
+            margin: 15px 0;
+            color: #9b2c2c;
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .alert-box strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #c53030;
+        }
+
+        .video-rules {
+            margin-top: 8px;
+            padding-left: 18px;
+        }
+
+        .video-rules li {
+            margin-bottom: 4px;
+            font-size: 12.5px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px dashed #cbd5e0;
+        }
+
+        .contact-title {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 13px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-whatsapp:active {
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #092015;
+            color: #d4af37;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Back Navigation -->
+        <div class="top-nav">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> হোম পেজে ফিরে যান
+            </a>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="brand-title">PUNAR<span>BOON</span></div>
+            <div class="page-subtitle">
+                <i class="fa-solid fa-rotate-left"></i> রিটার্ন ও রিফান্ড পলিসি
+            </div>
+        </div>
+
+        <!-- Main Content Body -->
+        <div class="content">
+            
+            <!-- 1. Core Return & Refund Rule -->
+            <div class="section-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-shield-halved" style="color: #d4af37;"></i>
+                    ১. রিটার্ন ও রিফান্ডের মূল নিয়ম
+                </div>
+
+                <div class="highlight-badge">
+                    <i class="fa-solid fa-clock-rotate-left" style="font-size: 18px; color: #319795; margin-top: 2px;"></i>
+                    <div>
+                        কাস্টমার প্রোডাক্ট ফেরত দিয়ে সম্পূর্ণ রিফান্ড (টাকা ফেরত) কেবল তখনই পাবেন, যদি আমাদের পক্ষ থেকে ভুল বা ত্রুটিপূর্ণ প্রোডাক্ট পাঠানো হয়।
+                    </div>
+                </div>
+
+                <p class="policy-text">
+                    ⏱️ প্রোডাক্ট হাতে পাওয়ার <strong>৩ দিনের মধ্যে (৭২ ঘণ্টা)</strong> রিটার্ন রিকোয়েস্ট দিতে হবে। ৩ দিন পার হয়ে গেলে কোনো ক্লেইম বা অভিযোগ গ্রহণযোগ্য হবে না।
+                </p>
+            </div>
+
+            <!-- 2. Eligible Reasons -->
+            <div class="section-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-circle-check" style="color: #38a169;"></i>
+                    ২. যেসব কারণে রিটার্ন ও রিফান্ড মিলবে
+                </div>
+
+                <ul class="policy-list-check">
+                    <li><strong>ভুল প্রোডাক্ট:</strong> আমরা ভুল সাইজ, কালার বা ভিন্ন ডিজাইন পাঠালে।</li>
+                    <li><strong>ড্যামেজ/ডিফেক্ট:</strong> শার্টে ছেঁড়া, সেলাই খোলা, বোতাম না থাকা বা বড় কোনো দৃশ্যমান দাগ থাকলে।</li>
+                </ul>
+            </div>
+
+            <!-- 3. Ineligible Reasons -->
+            <div class="section-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-circle-xmark" style="color: #e53e3e;"></i>
+                    ৩. যেসব কারণে রিটার্ন/রিফান্ড গ্রহণযোগ্য নয়
+                </div>
+
+                <ul class="policy-list-cross">
+                    <li><strong>ব্যক্তিগত পছন্দ:</strong> "পছন্দ হয়নি", "মানাচ্ছে না", বা "অন্যরকম ভেবেছিলাম"—এমন কোনো ব্যক্তিগত অজুহাতে রিটার্ন হবে না।</li>
+                    <li><strong>কালার পার্থক্য:</strong> ডিভাইসের ডিসপ্লে ব্রাইটনেস ও কালার সেটিংসের কারণে ১–২% কালার পার্থক্য হতে পারে, এর জন্য রিটার্ন প্রযোজ্য নয়।</li>
+                    <li><strong>কন্ডিশন পরিবর্তন:</strong> শার্টটি ১ বার হলেও পরিধান করলে, ধুলে, আয়রন করলে, ভাজ খুললে বা ট্যাগ/ইনভয়েস ছিঁড়ে ফেললে।</li>
+                    <li><strong>গন্ধ বা দাগ:</strong> শার্টে পারফিউম, ডিওডোরেন্ট বা ঘামের গন্ধ/দাগ পাওয়া গেলে।</li>
+                    <li><strong>ইচ্ছাকৃত ড্যামেজ:</strong> কাস্টমার কর্তৃক বা ডেলিভারির পর অনাকাঙ্ক্ষিতভাবে প্রোডাক্টের কোনো ক্ষতি করা হলে।</li>
+                    <li><strong>অফার/ক্লিয়ারেন্স সেল:</strong> ডিসকাউন্ট, অফার বা ক্লিয়ারেন্স সেলের প্রোডাক্টের ক্ষেত্রে রিটার্ন/রিফান্ড সম্পূর্ণ অগ্রহণযোগ্য।</li>
+                    <li><strong>ডেলিভারি ম্যানের অনুপস্থিতি:</strong> ডেলিভারি ম্যান চলে যাওয়ার পর পার্সেল খালি থাকা বা গায়েব হওয়ার কোনো অভিযোগ গ্রহণযোগ্য হবে না।</li>
+                </ul>
+            </div>
+
+            <!-- 4. Mandatory Unboxing Video -->
+            <div class="section-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-video" style="color: #e53e3e;"></i>
+                    ৪. বাধ্যতামূলক আনবক্সিং ভিডিও (কঠোর নীতি)
+                </div>
+
+                <div class="alert-box">
+                    <strong><i class="fa-solid fa-triangle-exclamation"></i> ভিডিও ছাড়া ক্লেইম গ্রহণযোগ্য নয়:</strong>
+                    রিটার্ন ও রিফান্ড ক্লেইম ভ্যালিড হতে অবশ্যই নিচের নিয়ম মেনে ভিডিও পাঠাতে হবে:
+                    <ol class="video-rules">
+                        <li>ডেলিভারি ম্যানের সামনে পার্সেল খোলার সময় থেকেই ভিডিও শুরু করতে হবে।</li>
+                        <li>ভিডিও কোনোভাবেই কাটা-ছেঁড়া (Cut), পজ (Pause) বা এডিটেড (Edited) হওয়া যাবে না।</li>
+                        <li>পার্সেলের সিকিউরিটি লেবেল, ইনভয়েস, অরিজিনাল ট্যাগ ও ড্যামেজ অংশটি স্পষ্ট দেখাতে হবে।</li>
+                        <li>মুখে অর্ডার নম্বর ও তারিখ স্পষ্ট বলতে হবে বা ভিডিওতে দৃশ্যমান রাখতে হবে।</li>
+                    </ol>
+                    <div style="margin-top: 8px; font-weight: 700; color: #c53030;">
+                        ⚠️ এডিটেড/কাটা ভিডিও বা আনবক্সিং ভিডিও ছাড়া রিটার্ন/রিফান্ড ক্লেইম ১০০% বাতিল বলে গণ্য হবে।
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Courier Charge & Refund Timeline -->
+            <div class="section-block">
+                <div class="section-title">
+                    <i class="fa-solid fa-money-bill-transfer" style="color: #d4af37;"></i>
+                    ৫. কুরিয়ার চার্জ ও রিফান্ডের নিয়ম
+                </div>
+
+                <ul class="policy-list-check">
+                    <li>আমাদের ভুলের কারণে রিটার্ন হলে সমস্ত কুরিয়ার ফি আমরা বহন করব।</li>
+                    <li>ক্লেইম এপ্রুভ হওয়ার <strong>১-৭ কর্মদিবসের মধ্যে</strong> বিকাশ বা নগদে রিফান্ড সম্পন্ন করা হবে।</li>
+                </ul>
+            </div>
+
+            <!-- Support Section -->
+            <div class="contact-section">
+                <p class="contact-title">রিটার্ন বা রিফান্ড ক্লেইমের জন্য সরাসরি মেসেজ দিন</p>
+                <a href="https://wa.me/88001810328075" class="btn-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> 
+                    WhatsApp: 01810-328075
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            আপনার আস্থাই আমাদের শক্তি।
+        </div>
+    </div>
+
+</body>
+                  </html>
